@@ -11,14 +11,14 @@ define-command -hidden kakground-select %{
 }
 
 hook -group kakground-pick global WinSetOption filetype=kakground-pick %{
-  hook -group kakground-pick window NormalKey '[JKjk%]|<esc>' kakground-select
+  hook -group kakground-pick window NormalKey '[jk%]|<esc>' kakground-select
   hook -once -always window WinSetOption filetype=.* %{
     remove-hooks window kakground-pick
   }
 }
 
 hook global WinSetOption filetype=kakground-pick %{
-  map window normal <ret> ': %val{selection}<home>set-background<ret>'
+  map window normal <ret> '<a-:><a-x>_: set-background %val{selection}<ret>'
 }
 
 define-command kakground -file-completion -params 1 %{
