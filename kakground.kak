@@ -5,7 +5,6 @@ define-command set-background -hidden -params 1 %{
 }
 
 define-command -hidden kakground-select %{
-  echo RAN!
   try %{
     execute-keys '<a-:><a-x>_: set-background %val{selection}<ret>'
   }
