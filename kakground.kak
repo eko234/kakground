@@ -2,7 +2,7 @@ declare-option str kakground_background_cmd "feh -z --bg-max"
 
 define-command set-background -hidden -params 1 %{
   nop %sh{ {
-    "$kak_opt_kakground_background_cmd" "$1" &
+    $kak_opt_kakground_background_cmd "$1" &
   } > /dev/null 2>&1 < /dev/null & }
 }
 
