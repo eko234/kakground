@@ -1,4 +1,4 @@
-declare-option str kakground_background_cmd "feh -z --bg-fill"
+declare-option str kakground_background_cmd "feh -z --bg-max"
 
 define-command set-background -hidden -params 1 %{
   nop %sh{ {
