@@ -1,6 +1,8 @@
+declare-option str kakground_background_cmd "feh -z --bg-fill"
+
 define-command set-background -hidden -params 1 %{
   nop %sh{ {
-    feh -z --bg-fill "$1" &
+    "$kak_opt_kakground_background_cmd" "$1" &
   } > /dev/null 2>&1 < /dev/null & }
 }
 
