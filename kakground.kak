@@ -8,9 +8,8 @@ define-command set-background -hidden -params 1 %{
 
 define-command -hidden kakground-select %{
   try %{
-    execute-keys '<a-:><a-j><a-l>_: set-background %reg{dot}<ret>'
-  }
-}
+    execute-keys '<a-:><a-h><a-l>_: set-background %reg{dot}<ret>'
+  } }
 
 hook -group kakground-pick global WinSetOption filetype=kakground-pick %{
   hook -group kakground-pick window NormalKey '[jk%]|<esc>' kakground-select
@@ -20,7 +19,7 @@ hook -group kakground-pick global WinSetOption filetype=kakground-pick %{
 }
 
 hook global WinSetOption filetype=kakground-pick %{
-  map window normal <ret> '<a-:><a-j><a-l>_: set-background %reg{dot}<ret>'
+  map window normal <ret> '<a-:><a-h><a-l>_: set-background %reg{dot}<ret>'
 }
 
 define-command kakground -file-completion -params 1 %{
