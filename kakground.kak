@@ -1,8 +1,8 @@
-declare-option str kakground_background_cmd "feh -z --bg-max"
+declare-option str kakground_background_cmd "xargs -n 1 -I {} feh -z --bg-max {}"
 
 define-command set-background -hidden -params 1 %{
   nop %sh{ {
-    $kak_opt_kakground_background_cmd "$1" &
+    echo "$1" | $kak_opt_kakground_background_cmd  &
   } > /dev/null 2>&1 < /dev/null & }
 }
 
